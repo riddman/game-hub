@@ -6,28 +6,29 @@ import GameCardSkeleton from './GameCardSkeleton';
 import GameCardContainer from './GameCardContainer';
 
 export default function GameGrid() {
-    const { games, isLoading, error } = useGames();
+    const { data, isLoading, error } = useGames();
     const skeletons = [1, 2, 3, 4, 5, 6];
 
     return (
         <>
             { error && <Text>{ error }</Text> }
             <SimpleGrid
+                key={'simple-grid'}
                 columns={ {sm: 1, md: 2, lg: 3, xl: 5} }
                 padding="10px"
                 spacing={ 10 }
             >
                 { isLoading && skeletons.map(skeleton => {
                     return (
-                        <GameCardContainer>
+                        <GameCardContainer key={ 'container-' + skeleton }>
                             <GameCardSkeleton key={ skeleton }/>
                         </GameCardContainer>
                     );
                 })}
 
-                { games.map(game => {
+                { data.map(game => {
                     return (
-                        <GameCardContainer>
+                        <GameCardContainer key={ 'container-' + game.id }>
                             <GameCard key={ game.id } game={ game }/>
                         </GameCardContainer>
                     );
