@@ -1,5 +1,5 @@
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
-import { useRef } from 'react';
+import { FormEvent, useRef } from 'react';
 import { BsSearch } from 'react-icons/bs';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 export default function SearchInput({ onSearch }: Props) {
     const ref = useRef<HTMLInputElement>(null);
 
-    const submitFunc = (event) => {
+    const submitFunc = (event: FormEvent) => {
         event.preventDefault();
 
         if (ref.current) {

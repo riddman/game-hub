@@ -28,3 +28,16 @@ Run the following command:
     npm install
     npm run dev
 
+
+v24.3.0
+
+https://smart-swatch.netlify.app/
+https://v2.chakra-ui.com/docs/components/text/usage#changing-the-font-size
+
+https://github.com/mosh-hamedani/game-hub
+
+
+https://rawg.io/
+https://api.rawg.io/docs/
+
+react-icons@4.7.1
